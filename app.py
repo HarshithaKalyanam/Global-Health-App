@@ -9,7 +9,7 @@ from sklearn.naive_bayes import MultinomialNB
 st.title("Disease Category Prediction using Naive Bayes")
 
 # Load Dataset
-df = pd.read_csv(r"C:\Users\Harshitha Kalyanam\Downloads\Global Health Statistics.csv")
+df = pd.read_csv("Global Health Statistics.csv")
 df = df.sample(50000)
 # Select columns
 df = df[['Disease Name', 'Treatment Type',
