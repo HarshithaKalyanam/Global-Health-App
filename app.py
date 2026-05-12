@@ -1,9 +1,82 @@
 import streamlit as st
 import pandas as pd
 
+st.markdown(
+    """
+    <style>
+
+    /* App background */
+    .stApp {
+        background-color: #eaf2f8;
+    }
+
+    /* General text */
+    h1, h2, h3, p, label {
+        color: black !important;
+    }
+
+    /* Selectbox main area */
+    .stSelectbox div[data-baseweb="select"] > div {
+        background-color: #f2f2f2 !important;
+        color: black !important;
+        border-radius: 8px;
+    }
+
+    /* Selected dropdown text */
+    div[data-baseweb="select"] span {
+        color: black !important;
+    }
+
+    /* Dropdown arrow */
+    .stSelectbox svg {
+        fill: black !important;
+    }
+
+    /* Dropdown popup */
+    div[role="listbox"] {
+        background-color: #2b2b2b !important;
+    }
+
+    /* Dropdown options */
+    div[role="option"] {
+        background-color: #2b2b2b !important;
+    }
+
+    /* Dropdown option text */
+    div[role="option"] * {
+        color: white !important;
+    }
+
+    /* Hover effect */
+    div[role="option"]:hover {
+        background-color: #444 !important;
+    }
+
+    /* Predict button */
+    .stButton > button {
+        background-color: #2E86C1 !important;
+        color: white !important;
+        border-radius: 10px;
+        border: none;
+        height: 45px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .stButton > button:hover {
+        background-color: #1B4F72 !important;
+        color: white !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+
 
 # ---------- APP TITLE ----------
 st.set_page_config(page_title="Disease Predictor", layout="centered")
