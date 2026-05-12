@@ -40,7 +40,7 @@ def train_model():
     accuracy = model.score(X, y)
 
 
-    return model, cv
+    return model, cv, accuracy
 
 model, cv , accuracy = train_model()
 st.write(f"📊 Model Accuracy: {accuracy:.2f}")
