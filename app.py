@@ -8,6 +8,10 @@ st.set_page_config(page_title="Disease Predictor", layout="centered")
 st.title("🩺 Disease Category Prediction System")
 st.write("Enter details using dropdowns and predict disease category")
 
+if st.checkbox("📂 Show Dataset"):
+    df = pd.read_csv("data.csv")
+    st.dataframe(df.head())
+
 # ---------- MODEL ----------
 @st.cache_resource
 def train_model():
@@ -33,10 +37,16 @@ def train_model():
     model = MultinomialNB()
     model.fit(X, y)
 
+    accuracy = model.score(X, y)
+
+
     return model, cv
 
-model, cv = train_model()
+model, cv , accuracy = train_model()
+st.write(f"📊 Model Accuracy: {accuracy:.2f}")
 
+st.markdown("---")
+st.subheader("🧾 Patient Input Section")
 
 # ---------- UI ----------
 st.subheader("Enter Patient Details")
