@@ -37,7 +37,6 @@ def train_model():
 
 model, cv = train_model()
 
-st.write("📊 Model Accuracy:", model.score(cv.transform(X), y))
 
 # ---------- UI ----------
 st.subheader("Enter Patient Details")
@@ -45,10 +44,29 @@ st.subheader("Enter Patient Details")
 col1, col2 = st.columns(2)
 
 with col1:
-    disease = st.text_input("Disease Name", "COVID-19 Vaccination")
+    disease = st.selectbox(
+    "Disease Name",
+    [
+        "COVID-19",
+        "Diabetes",
+        "Hypertension",
+        "Asthma",
+        "Malaria",
+        "Tuberculosis"
+    ]
+)
+with col2:  
+    treatment = st.selectbox(
+    "Treatment Type",
+    [
+        "Vaccination",
+        "Medication",
+        "Therapy",
+        "Surgery",
+        "Lifestyle Change"
+    ]
+)
 
-with col2:
-    treatment = st.text_input("Treatment Type", "Vaccination")
 
 col3, col4 = st.columns(2)
 
