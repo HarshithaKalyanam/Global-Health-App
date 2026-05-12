@@ -73,18 +73,16 @@ Deployed using Streamlit Cloud.
 5. Prediction Generation
 6. Streamlit UI Deployment
 
----
 
-## 🎯 Future Improvements
+ Future Improvements
 
 * Improve dataset quality and balancing
 * Increase prediction accuracy
 * Add visual analytics and charts
 * Deploy with database integration
 
----
 
-## 👩‍💻 Developed By
+ Developed By
 
 Harshitha Kalyanam
 
