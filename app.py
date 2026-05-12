@@ -10,7 +10,6 @@ st.title("Disease Category Prediction using Naive Bayes")
 
 # Load Dataset
 df = pd.read_csv("data.csv")
-
 # Select columns
 df = df[['Disease Name', 'Treatment Type',
          'Age Group', 'Gender',
