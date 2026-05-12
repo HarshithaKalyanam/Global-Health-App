@@ -37,6 +37,8 @@ def train_model():
 
 model, cv = train_model()
 
+st.write("📊 Model Accuracy:", model.score(cv.transform(X), y))
+
 # ---------- UI ----------
 st.subheader("Enter Patient Details")
 
